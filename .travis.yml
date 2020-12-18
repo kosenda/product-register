@@ -7,7 +7,7 @@ before_install:
 
 script:
   
-  - docker-compose dexec --env 'RAILS_ENV=test' web rails db:create
-  - docker-compose rexec --env 'RAILS_ENV=test' web rails db:migrate
-  - docker-compose rexec --env 'RAILS_ENV=test' web rails test
+  - docker-compose exec --env 'RAILS_ENV=test' web rails db:create
+  - docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
+  - docker-compose exec --env 'RAILS_ENV=test' web rails test
 
